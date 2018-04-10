@@ -2,6 +2,7 @@ baseurl = "http://localhost:1313/"
 Title = "work in progress."
 # Copyright notice. This is displayer in the footer.
 copyright = "tea bought it to life"
+theme = "wip"
 
 [params]
   paginate = 10

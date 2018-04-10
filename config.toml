@@ -1,4 +1,4 @@
-baseurl = "http://localhost:1313/"
+baseurl = "https://unruffled-bhaskara-2e71cf.netlify.com/"
 Title = "work in progress."
 # Copyright notice. This is displayer in the footer.
 copyright = "tea bought it to life"

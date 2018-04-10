@@ -1,0 +1,45 @@
+{{ partial "header.html" . }}
+{{ $baseurl := .Site.BaseURL | sanitizeurl }}
+<article class="article article--single">
+  <header>
+    <h1 class="article__title">{{ .Title }}</h1>
+    <div>
+      <div class="article__meta">
+        <span class="article__meta-date">Posted on
+          <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+            {{ .Date.Format "Jan 2, 2006" }}
+          </time>
+        </span>
+        <span class="article__meta-tags">Tags: 
+          {{ range .Params.tags }}
+          <a href="{{ $baseurl }}/tags/{{ . | urlize }}" class="article__tag">{{ . }}</a>
+          {{ end }}
+        </span>
+      </div>
+      
+    </div>
+  </header>
+  {{ with .Params.thumbnail }}
+    <img src="{{ . }}" alt="thumbnail" class="article__thumbnail">
+  {{ end }}
+  <section id="js-article" class="article__body">
+    {{ .Content }}
+  </section>
+  <footer>
+    <nav class="pag">
+        {{if .Prev}}
+        <a class="pag__btn pag__btn--prev" href="{{ .Prev.Permalink }}">next posts</a>
+        {{ else }}
+        {{ end }}
+        {{if .Next}}
+        <a class="pag__btn pag__btn--next" href="{{ .Next.Permalink }}">previous posts</a>
+        {{ else }}
+          {{ end }}
+
+        <!--  -->
+      </div>
+    </nav>
+    <!-- {{ partial "related.html" . }} -->
+  </footer>
+</article>
+{{ partial "footer.html" . }}

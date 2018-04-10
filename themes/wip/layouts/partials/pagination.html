@@ -1,0 +1,13 @@
+<nav class="pag">
+  <!-- <div class="pagination__ctrl"> -->
+    
+      {{if .HasPrev}}
+      <a class="pag__btn pag__btn--prev" href="{{ .Prev.URL }}">next posts</a>
+      {{end}}
+      {{if .HasNext}}
+      <a class="pag__btn pag__btn--next" href="{{ .Next.URL }}">previous posts</a>
+      {{end}}
+    
+  <!-- </div> -->
+  <!-- <span class="c-pagination__count p-pagination__count">Page {{ .PageNumber }} of {{.TotalPages}}</span> -->
+</nav>

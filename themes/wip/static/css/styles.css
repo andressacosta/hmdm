@@ -5,6 +5,7 @@
 
 html {
     box-sizing: border-box;
+    background-color: #f5d6be;
 }
 
 *, *:before, *:after {
@@ -95,6 +96,7 @@ body {
 	position: relative;
     display: inline-block;
     margin: 0;
+    background-color: #a9d4be;
 }
 
 @media screen and (max-width: 768px) {
@@ -109,13 +111,16 @@ body {
     bottom: 0;
     fill: #00FFFF;
     stroke: #00FFFF;
-    opacity: .5;
+    opacity: .8;
     stroke-width: 5px;
+    fill: black;
+    stroke: black;
 }
 
 .title__link {
 	color: inherit;
-	text-decoration: none;
+    text-decoration: none;
+    color: #ff5e3c;
 }
 @media screen and (min-width: 1000px) {
     .menu {
@@ -170,6 +175,9 @@ body {
     font-family: menlo;
     font-size: .6em;
     margin-top: 0;
+    background: #e83534;
+    color: white;
+    padding: 0 .2em;
 }
 .article__summary {
     font-size: .8em;

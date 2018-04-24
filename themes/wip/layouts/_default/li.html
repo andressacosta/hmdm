@@ -1,4 +1,4 @@
-<article class="article">
+<!-- <article class="article">
   <header>
     <h2 class="article__title"><a class="article__title-link" href="{{ .Permalink }}">{{ .Title }}</a></h2>
     <p class="article__meta">
@@ -14,4 +14,13 @@
   {{ if .Truncated }}
   <a href="{{ .Permalink }}" class="article__btn">Read more</a></li>
   {{ end }}
+</article> -->
+
+<article class="article article--list">
+    <header class="article__header">
+      <h2 class="article__title"><a class="article__title-link" href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      <time class="article__meta" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+        {{ .Date.Format "Jan 2, 2006" }}
+      </time>
+    </header>
 </article>

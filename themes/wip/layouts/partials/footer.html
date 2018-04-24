@@ -1,26 +1,28 @@
   </main>
   <footer class="footer clearfix">
-    <p class="copyright">
-      {{ with .Site.Copyright | safeHTML }}
-        {{ . }}
-      {{ else }}
-        {{ if .Site.Params.author }}
-          {{ if .Site.Params.authorwebsite }}
-            <a href="{{ .Site.Params.authorwebsite }}">{{ .Site.Params.author }}</a>
-          {{ else }}
-            {{ .Site.Params.author }}
+    <div class="footer__inner">
+      <p class="copyright">
+        {{ with .Site.Copyright | safeHTML }}
+          {{ . }}
+        {{ else }}
+          {{ if .Site.Params.author }}
+            {{ if .Site.Params.authorwebsite }}
+              <a href="{{ .Site.Params.authorwebsite }}">{{ .Site.Params.author }}</a>
+            {{ else }}
+              {{ .Site.Params.author }}
+            {{ end }}
+          {{ end }}
+          &nbsp;&bull;&nbsp;
+          {{ .Site.LastChange.Format "2006" }}
+
+          {{ if .Site.Title }}
+            &nbsp;&bull;&nbsp;
+            <a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a>
           {{ end }}
         {{ end }}
-        &nbsp;&bull;&nbsp;
-        {{ .Site.LastChange.Format "2006" }}
-
-        {{ if .Site.Title }}
-          &nbsp;&bull;&nbsp;
-          <a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a>
-        {{ end }}
-      {{ end }}
-    </p>
-    {{ partial "link.html" . }}
+      </p>
+      {{ partial "link.html" . }}
+    </div>
   </footer>
 
   {{ with .Site.Params.ga_api_key }}

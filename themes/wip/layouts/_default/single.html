@@ -1,23 +1,23 @@
 {{ partial "header.html" . }}
 {{ $baseurl := .Site.BaseURL | sanitizeurl }}
 <article class="article article--single">
-  <header>
+  <header class="article__header">
     <h1 class="article__title">{{ .Title }}</h1>
-    <div>
+    <!-- <div> -->
       <div class="article__meta">
-        <span class="article__meta-date">Posted on
+        <!-- <span class="article__meta-date"> -->
           <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
             {{ .Date.Format "Jan 2, 2006" }}
           </time>
-        </span>
-        <span class="article__meta-tags">Tags: 
+        <!-- </span> -->
+        <!-- <span class="article__meta-tags"> -->
           {{ range .Params.tags }}
           <a href="{{ $baseurl }}/tags/{{ . | urlize }}" class="article__tag">{{ . }}</a>
           {{ end }}
-        </span>
+        <!-- </span> -->
       </div>
       
-    </div>
+    <!-- </div> -->
   </header>
   {{ with .Params.thumbnail }}
     <img src="{{ . }}" alt="thumbnail" class="article__thumbnail">
@@ -26,7 +26,7 @@
     {{ .Content }}
   </section>
   <footer>
-    <nav class="pag">
+    <!-- <nav class="pag">
         {{if .Prev}}
         <a class="pag__btn pag__btn--prev" href="{{ .Prev.Permalink }}">next posts</a>
         {{ else }}
@@ -36,10 +36,9 @@
         {{ else }}
           {{ end }}
 
-        <!--  -->
       </div>
-    </nav>
-    <!-- {{ partial "related.html" . }} -->
+    </nav> -->
+    {{ partial "related.html" . }}
   </footer>
 </article>
 {{ partial "footer.html" . }}

@@ -1,7 +1,7 @@
 baseurl = "https://unruffled-bhaskara-2e71cf.netlify.com/"
 Title = "work in progress."
 # Copyright notice. This is displayer in the footer.
-copyright = "hello :) find me at "
+copyright = ":)"
 theme = "wip"
 
 [params]

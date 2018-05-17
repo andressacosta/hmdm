@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 {{ partial "head.html" . }}
-<body class="theme-fixed">
+
+<body class="theme-fixed {{ if .IsPage }} child {{ else }} home {{ end }}">
   <a href="#main" class="skip-link visuallyhidden">Skip to content</a>
   {{ partial "svgpack-sprite.html" . }}
   <header class="header header--cover">
@@ -10,16 +11,16 @@
       {{ if .IsPage }}
       <p class="title title--brand">
         <a href="{{ .Site.BaseURL }}" class="title__link">{{ .Site.Title }}</a>
-        <svg viewBox="0 0 449.1 12.3" class="title__underline">
-          <path class="st0" d="M0.1,10.3c148-10.4,263.4-9.9,448.9-4.6"/>
-        </svg>
+        <!-- <svg viewBox="0 0 449.1 12.3" class="title__underline">
+          <path class="st0" d="M0.1,10.3c148-10.4,263.4-9.9,448.9-4.6" />
+        </svg> -->
       </p>
       {{ else }}
       <h1 class="title title--brand">
         <a href="{{ .Site.BaseURL }}" class="title__link">{{ .Site.Title }}</a>
-        <svg viewBox="0 0 449.1 12.3" class="title__underline">
-          <path class="st0" d="M0.1,10.3c148-10.4,263.4-9.9,448.9-4.6"/>
-        </svg>
+        <!-- <svg viewBox="0 0 449.1 12.3" class="title__underline"> -->
+        <!-- <path class="st0" d="M0.1,10.3c148-10.4,263.4-9.9,448.9-4.6"/> -->
+        <!-- </svg> -->
       </h1>
       {{ end }}
     </div>
